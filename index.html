@@ -13,15 +13,23 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
 
-    <body class="min-h-screen flex flex-col">
-        <main class="flex-1 container mx-auto px-6 py-8">
-            <div class="text-center mb-12 slide-up">
+    <body class="min-h-screen flex flex-col dark:bg-zinc-900 dark:text-white">
+        <main class="flex-1 container mx-auto px-6 py-8 slide-up">
+            <div class="text-center mb-12">
                 <img src="assets/logo.png" alt="LocalCert Logo" class="hover:animate-pulse mx-auto w-24 mb-4" draggable="false">
-                <h1 class="text-4xl font-bold mb-4 select-none">Easy HTTPS for your private networks</h1>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto select-none">We're laser focused on making it easier to get a globally valid SSL certificate which you can use within your private network. LocalCert offers free subdomains which are suitable for hosting internal applications.</p>
+                <h1 class="text-4xl font-bold mb-4">Easy HTTPS for your private networks</h1>
+                <p class="text-md text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">LocalCert provides free subdomains for hosting internal applications.</p>
+            </div>
+
+            <div class="text-center text-xl text-gray-600 dark:text-gray-400">
+                <p>We are currently undergoing an infrastructure rewrite, and all services will be offline until further notice.</p>
+                <p>Contact <a class="text-blue-600 hover:text-blue-500 dark:text-blue-400" href="mailto:support@localcert.net">support@localcert.net</a> with any enquiries.</p>    
             </div>
         </main>
 
-        <footer class="py-4 text-center text-sm text-gray-500 select-none">&copy; 2023-<script>document.write(new Date().getFullYear())</script> LocalCert - All Rights Reserved.</footer>
+        <footer class="py-4 text-center text-sm text-gray-500 select-none">
+            <p>&copy; 2023-<script>document.write(new Date().getFullYear())</script> LocalCert - All Rights Reserved.</p>
+            <p>A project by <a class="text-blue-600 hover:text-blue-500 dark:text-blue-400" href="https://wdh.gg">William Harrison</a>.</p>
+        </footer>
     </body>
 </html>
