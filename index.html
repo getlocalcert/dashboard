@@ -8,23 +8,67 @@
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
         <!-- Scripts -->
         <script src="https://cdn.tailwindcss.com"></script>
         <script defer data-domain="localcert.net" src="https://analytics.hrsn.net/js/script.js"></script>
     </head>
 
-    <body class="min-h-screen flex flex-col dark:bg-zinc-900 dark:text-white">
+    <body class="min-h-screen flex flex-col bg-zinc-900 text-white">
         <main class="flex-1 container mx-auto px-6 py-8 slide-up">
             <div class="text-center mb-12">
                 <img src="assets/logo.png" alt="LocalCert Logo" class="hover:animate-pulse mx-auto w-24 mb-4" draggable="false">
                 <h1 class="text-4xl font-bold mb-4">Easy HTTPS for your private networks</h1>
-                <p class="text-md text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">LocalCert provides free subdomains for hosting internal applications.</p>
+                <p class="text-md text-gray-400 max-w-3xl mx-auto">LocalCert provides free subdomains for hosting internal applications.</p>
             </div>
 
-            <div class="text-center text-xl text-gray-600 dark:text-gray-400">
-                <p>We are currently undergoing an infrastructure rewrite, and all services will be offline until further notice.</p>
-                <p>Contact <a class="text-blue-600 hover:text-blue-500 dark:text-blue-400" href="mailto:support@localcert.net">support@localcert.net</a> with any enquiries.</p>    
+            <div id="create-subdomain">
+                
+            </div>
+
+            <div id="subdomain-details" class="max-w-lg bg-zinc-800 border border-gray-700 shadow-sm rounded-lg p-5 mx-auto hidden">
+                <h2 class="text-xl font-semibold mb-4">Your Subdomain Details</h2>
+
+                <div class="flex items-center mb-4">
+                    <span class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center border rounded-s-lg bg-gray-600 border-gray-600">Domain</span>
+                    <div class="relative w-full">
+                        <input id="subdomain" type="text" class="border border-e-0 text-gray-300 text-sm border-s-0 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 focus:border-blue-500" readonly disabled />
+                    </div>
+
+                    <button id="subdomain-copy" class="shrink-0 z-10 inline-flex items-center py-3 px-4 text-sm font-medium text-center text-white rounded-e-lg focus:outline-none bg-gray-600 border border-gray-600" type="button">
+                        <span id="subdomain-copy-icon">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                                <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"/>
+                            </svg>
+                        </span>
+                        <span id="subdomain-copied-icon" class="hidden">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+
+                <div class="flex items-center">
+                    <span class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center border rounded-s-lg bg-gray-600 border-gray-600">Password</span>
+                    <div class="relative w-full">
+                        <input id="password" type="password" class="border border-e-0 text-gray-300 text-sm border-s-0 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 focus:border-blue-500" readonly disabled />
+                    </div>
+
+                    <button id="password-copy" class="shrink-0 z-10 inline-flex items-center py-3 px-4 text-sm font-medium text-center text-white rounded-e-lg focus:outline-none bg-gray-600 border border-gray-600" type="button">
+                        <span id="password-copy-icon">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                                <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"/>
+                            </svg>
+                        </span>
+                        <span id="password-copied-icon" class="hidden">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
             </div>
         </main>
 
@@ -32,5 +76,8 @@
             <p>&copy; 2023-<script>document.write(new Date().getFullYear())</script> LocalCert - All Rights Reserved.</p>
             <p>A project by <a class="text-blue-600 hover:text-blue-500 dark:text-blue-400" href="https://wdh.gg">William Harrison</a>.</p>
         </footer>
+
+        <script src="scripts/copy.js"></script>
+        <script src="scripts/prefill.js"></script>
     </body>
 </html>
