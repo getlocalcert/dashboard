@@ -8,6 +8,7 @@
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
         <!-- Scripts -->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -17,18 +18,19 @@
     <body class="min-h-screen flex flex-col dark:bg-zinc-900 dark:text-white">
         <main class="flex-1 container mx-auto px-6 py-8 slide-up">
             <div class="text-center mb-12">
-                <img src="assets/logo.png" alt="LocalCert Logo" class="hover:animate-pulse mx-auto w-24 mb-4" draggable="false">
-                <h1 class="text-4xl font-bold mb-4">Easy HTTPS for your private networks</h1>
-                <p class="text-md text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">LocalCert provides free subdomains for hosting internal applications.</p>
+                <img src="assets/logo.png" alt="LocalCert Logo" class="animate-pulse mx-auto w-24 mb-4" draggable="false">
+                <h1 class="text-3xl font-bold mb-4"><i class="fa-solid fa-lock text-green-500"></i> HTTPS for your private networks</h1>
+                <p class="text-md text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">We provide free <code>.localcert.net</code> subdomains for hosting internal applications.</p>
             </div>
 
-            <div class="text-center text-xl text-gray-600 dark:text-gray-400">
-                <p>We are currently undergoing an infrastructure rewrite, and all services will be offline until further notice.</p>
-                <p>Contact <a class="text-blue-600 hover:text-blue-500 dark:text-blue-400" href="mailto:support@localcert.net">support@localcert.net</a> with any enquiries.</p>    
+            <div class="text-center text-xl max-w-xl text-gray-600 dark:text-gray-400 mx-auto">
+                <p>To get started, visit our <a href="https://docs.localcert.net" class="text-blue-600 hover:text-blue-500 dark:text-blue-400">API documentation</a>. Our service is currently available only through our API, however we do have plans for a dashboard in the near future.</p>
+                <br>
+                <p class="text-lg">Please contact <a href="mailto:support@localcert.net" class="text-blue-600 hover:text-blue-500 dark:text-blue-400">support@localcert.net</a> for any enquiries.</p>
             </div>
         </main>
 
-        <footer class="py-4 text-center text-sm text-gray-500 select-none">
+        <footer class="py-4 text-center text-md text-gray-500 select-none">
             <p>&copy; 2023-<script>document.write(new Date().getFullYear())</script> LocalCert - All Rights Reserved.</p>
             <p>A project by <a class="text-blue-600 hover:text-blue-500 dark:text-blue-400" href="https://wdh.gg">William Harrison</a>.</p>
         </footer>
