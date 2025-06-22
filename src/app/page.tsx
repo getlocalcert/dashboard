@@ -30,7 +30,6 @@ export default function Home() {
         </code>{" "}
         subdomains for hosting internal applications.
       </p>
-
     </div>
   );
 }

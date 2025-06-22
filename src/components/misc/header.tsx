@@ -18,7 +18,9 @@ export default function Heading() {
               height={40}
               className="h-8 w-8"
             />
-            <span className="font-semibold text-lg text-foreground">LocalCert</span>
+            <span className="font-semibold text-lg text-foreground">
+              LocalCert
+            </span>
           </Link>
 
           {/* Buttons */}
