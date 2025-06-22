@@ -1,3 +1,7 @@
+# Localcert Site/Dashboard
+
+This site is the main page and dashboard for [localcert](https://localcert.net) project. IT allows for the sending of API requests through a web dashboard.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
