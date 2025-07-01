@@ -22,7 +22,7 @@ export default function Heading() {
                         </Button>
                         <Button asChild variant="secondary">
                             <Link href="https://docs.localcert.net" target="_blank" rel="noopener noreferrer">
-                                API
+                                API Docs
                             </Link>
                         </Button>
                         <Button asChild variant="secondary">
