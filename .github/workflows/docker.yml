@@ -11,7 +11,7 @@ concurrency:
     cancel-in-progress: true
 
 env:
-    DOCKER_IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}
+    DOCKER_IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.owner.login }}-${{ github.event.repository.name }}
     DOCKER_REGISTRY: docker.io
     GITHUB_IMAGE_NAME: ${{ github.repository }}
     GITHUB_REGISTRY: ghcr.io
