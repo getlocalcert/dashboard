@@ -10,9 +10,6 @@ export default function Privacy() {
                 Privacy Policy
             </h2>
 
-            {/* Effective Date */}
-            <p className="text-muted-foreground text-sm mb-6">Effective Date: July 9, 2025</p>
-
             {/* Policy Content */}
             <div className="text-muted-foreground text-base max-w-xl space-y-6 text-left">
                 <div>
