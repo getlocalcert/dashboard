@@ -10,8 +10,8 @@ export default function Footer() {
             <FooterObject
                 mainLinks={[
                     { href: "https://wdh.gg/donate", label: "Donate" },
-                    { href: "mailto:abuse@localcert.net", label: "Report Abuse" },
-                    { href: "mailto:admin@localcert.net", label: "Contact Us" }
+                    { href: "/privacy", label: "Privacy Policy" },
+                    { href: "mailto:support@localcert.net", label: "Contact Us" }
                 ]}
                 copyright={`© 2023-${currentYear} LocalCert - All Rights Reserved.`}
             />
