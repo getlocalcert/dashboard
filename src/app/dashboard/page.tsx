@@ -121,7 +121,7 @@ export default function DashboardPage() {
     };
 
     return (
-        <main className="container mx-auto px-4 py-10 space-y-4">
+        <main className="container mx-auto px-4 py-10 space-y-4 max-w-4xl">
             {/* Create Subdomain Section */}
             <Card>
                 <CardHeader>
@@ -138,7 +138,7 @@ export default function DashboardPage() {
                         </div>
                     )}
                     {createResponse && (
-                        <div className="space-y-2 rounded-md border p-4">
+                        <div className="space-y-2 mb-4 p-3 rounded-md border p-4">
                             <div>
                                 <span className="font-semibold">Subdomain:</span>{" "}
                                 <Badge variant="outline">{createResponse.subdomain}.localcert.net</Badge>
@@ -148,25 +148,23 @@ export default function DashboardPage() {
                                 <Badge variant="outline">{createResponse.password}</Badge>
                             </div>
                             {/* <div>
-                <span className="font-semibold">Expires:</span>{" "}
-                <Badge variant="outline">
-                  {new Date(createResponse.expiresAt).toLocaleString()}
-                </Badge>
-              </div> */}
+                                <span className="font-semibold">Expires:</span>{" "}
+                                <Badge variant="outline">{new Date(createResponse.expiresAt).toLocaleString()}</Badge>
+                            </div> */}
                         </div>
                     )}
+                    {!createResponse && (
+                        <Button onClick={handleCreate} disabled={loadingCreate}>
+                            {loadingCreate ? (
+                                <>
+                                    <Loader2Icon className="w-4 h-4 mr-2 animate-spin" /> Creating...
+                                </>
+                            ) : (
+                                "Create"
+                            )}
+                        </Button>
+                    )}
                 </CardContent>
-                <CardFooter>
-                    <Button onClick={handleCreate} disabled={loadingCreate}>
-                        {loadingCreate ? (
-                            <>
-                                <Loader2Icon className="w-4 h-4 mr-2 animate-spin" /> Creating...
-                            </>
-                        ) : (
-                            "Create"
-                        )}
-                    </Button>
-                </CardFooter>
             </Card>
 
             {/* Delete Subdomain Section */}
@@ -177,7 +175,7 @@ export default function DashboardPage() {
                         Delete a <code>.localcert.net</code> subdomain and all associated DNS records.
                     </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-4 flex flex-col">
                     {deleteError && (
                         <div className="mb-4 p-3 border border-destructive text-destructive bg-destructive/10 rounded-md">
                             {deleteError}
@@ -242,7 +240,7 @@ export default function DashboardPage() {
                         This is typically used with Let's Encrypt or other certificate authorities.
                     </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-4 flex flex-col">
                     {acmeError && (
                         <div className="mb-4 p-3 border border-destructive text-destructive bg-destructive/10 rounded-md">
                             {acmeError}

@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
+
 import Footer from "@/components/misc/footer";
 import Header from "@/components/misc/header";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -18,7 +22,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title: "LocalCert",
-    description: "HTTPS for your private networks."
+    description: "Easy HTTPS for your Private Networks."
 };
 
 export default function RootLayout({
