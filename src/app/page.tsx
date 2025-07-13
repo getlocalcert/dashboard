@@ -17,7 +17,7 @@ export default function Home() {
 
             {/* Title */}
             <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-2 text-foreground mb-4">
-                <Lock className="text-green-500 h-6 w-6" />
+                <Lock className="text-green-500 h-6 w-6 md:block hidden" />
                 Secure Your Private Networks
             </h2>
 

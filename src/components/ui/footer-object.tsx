@@ -3,10 +3,9 @@ interface FooterProps {
         href: string;
         label: string;
     }>;
-    copyright: string;
 }
 
-export function FooterObject({ mainLinks, copyright }: FooterProps) {
+export function FooterObject({ mainLinks }: FooterProps) {
     return (
         <footer className="w-full pb-6 pt-8 lg:pb-8 lg:pt-12">
             <div className="px-4 lg:px-8">
@@ -26,7 +25,7 @@ export function FooterObject({ mainLinks, copyright }: FooterProps) {
                         </ul>
                     </nav>
 
-                    <div className="mt-6 pt-5 text-base leading-6 text-muted-foreground whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
+                    <div className="mt-6 pt-5 text-base leading-6 text-muted-foreground whitespace-wrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
                         <div>
                             &copy; 2023-{new Date().getFullYear()} <span className="font-semibold">LocalCert</span> -
                             All Rights Reserved.
