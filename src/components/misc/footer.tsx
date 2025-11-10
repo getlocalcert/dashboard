@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="w-full">
             <FooterObject
                 mainLinks={[
-                    { href: "https://wdh.gg/donate", label: "Donate" },
+                    { href: "https://wh.org/donate", label: "Donate" },
                     { href: "/privacy", label: "Privacy Policy" },
                     { href: "mailto:support@localcert.net", label: "Contact Us" }
                 ]}
