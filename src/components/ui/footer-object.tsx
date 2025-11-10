@@ -32,7 +32,7 @@ export function FooterObject({ mainLinks }: FooterProps) {
                         </div>
                         <div>
                             A project by{" "}
-                            <a className="text-blue-500 hover:text-blue-600" href="https://wdh.gg">
+                            <a className="text-blue-500 hover:text-blue-600" href="https://wharrison.com.au">
                                 William Harrison
                             </a>
                             .
