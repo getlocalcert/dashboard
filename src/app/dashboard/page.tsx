@@ -197,7 +197,7 @@ export default function DashboardPage() {
                             id="subdomain"
                             name="subdomain"
                             type="text"
-			    autoComplete="username"
+                            autoComplete="username"
                             value={subdomain}
                             onChange={(e) => setSubdomain(e.target.value)}
                             required
@@ -213,7 +213,7 @@ export default function DashboardPage() {
                             id="password"
                             name="password"
                             type="password"
-			    autoComplete="current-password"
+                            autoComplete="current-password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
@@ -275,7 +275,7 @@ export default function DashboardPage() {
                             id="acme-subdomain"
                             name="acme-subdomain"
                             type="text"
-			    autoComplete="username"
+                            autoComplete="username"
                             value={subdomain}
                             onChange={(e) => setSubdomain(e.target.value)}
                             required
@@ -291,7 +291,7 @@ export default function DashboardPage() {
                             id="acme-password"
                             name="acme-password"
                             type="password"
-			    autoComplete="current-password"
+                            autoComplete="current-password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
