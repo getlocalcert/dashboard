@@ -21,7 +21,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v6
+              uses: actions/checkout@v6.0.3
   
             - name: Detect package manager
               id: detect-package-manager
@@ -42,13 +42,13 @@ jobs:
                   fi
 
             - name: Setup Node
-              uses: actions/setup-node@v6
+              uses: actions/setup-node@v6.5.0
               with:
                   node-version: "20.20.1"
                   cache: ${{ steps.detect-package-manager.outputs.manager }}
 
             - name: Restore cache
-              uses: actions/cache@v5
+              uses: actions/cache@v5.1.0
               with:
                   path: |
                       .next/cache
@@ -63,7 +63,7 @@ jobs:
               run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
             - name: Upload artifact
-              uses: actions/upload-pages-artifact@v4
+              uses: actions/upload-pages-artifact@v4.0.0
               with:
                   path: ./out
 
@@ -77,4 +77,4 @@ jobs:
         steps:
             - name: Deploy to GitHub Pages
               id: deployment
-              uses: actions/deploy-pages@v4
+              uses: actions/deploy-pages@v4.0.5
