@@ -6,6 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { Loader2Icon } from "lucide-react";
 
+// For testing: http://localhost:8080
+const API_BASE = "https://api.localcert.net";
+
 export default function DashboardPage() {
     const [loadingCreate, setLoadingCreate] = useState(false);
     const [loadingDelete, setLoadingDelete] = useState(false);
@@ -39,7 +42,7 @@ export default function DashboardPage() {
         setCreateResponse(null);
         setCreateError(null);
         try {
-            const res = await fetch("https://api.localcert.net/v1/domains/create", {
+            const res = await fetch(`${API_BASE}/v1/domains/create`, {
                 method: "POST"
             });
             const data = await res.json();
@@ -66,7 +69,7 @@ export default function DashboardPage() {
 
         setLoadingDelete(true);
         try {
-            const res = await fetch("https://api.localcert.net/v1/domains/delete", {
+            const res = await fetch(`${API_BASE}/v1/domains/delete`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -99,7 +102,7 @@ export default function DashboardPage() {
 
         setLoadingAcme(true);
         try {
-            const res = await fetch("https://api.localcert.net/v1/acme/create", {
+            const res = await fetch(`${API_BASE}/v1/acme/create`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -194,6 +197,7 @@ export default function DashboardPage() {
                             id="subdomain"
                             name="subdomain"
                             type="text"
+                            autoComplete="username"
                             value={subdomain}
                             onChange={(e) => setSubdomain(e.target.value)}
                             required
@@ -209,6 +213,7 @@ export default function DashboardPage() {
                             id="password"
                             name="password"
                             type="password"
+                            autoComplete="current-password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
@@ -270,6 +275,7 @@ export default function DashboardPage() {
                             id="acme-subdomain"
                             name="acme-subdomain"
                             type="text"
+                            autoComplete="username"
                             value={subdomain}
                             onChange={(e) => setSubdomain(e.target.value)}
                             required
@@ -285,6 +291,7 @@ export default function DashboardPage() {
                             id="acme-password"
                             name="acme-password"
                             type="password"
+                            autoComplete="current-password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
